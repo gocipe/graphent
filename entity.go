@@ -10,12 +10,8 @@ const (
 )
 
 //Entity represents a content type
-type Entity struct {
-	Name        string
-	Label       string
-	Description string
-	Icon        string
-	Instance    interface{}
-	filters     map[string]int8
-	Resolvers   Resolvers
+type Entity interface {
+	Description() string
+	Instance() interface{}
+	Resolvers() Resolvers
 }
